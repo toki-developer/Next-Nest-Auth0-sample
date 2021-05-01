@@ -1,4 +1,4 @@
-# next-nest-graphql-starter-template
+# next-nest-Google-Auth-sample
 
 ### 使用技術
 
