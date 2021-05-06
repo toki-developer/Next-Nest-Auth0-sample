@@ -1,8 +1,10 @@
+import { useUser } from "@auth0/nextjs-auth0";
 import gql from "graphql-tag";
 import { useSampleQuery } from "src/apollo/graphql";
 
 const Home = () => {
   const { data, loading } = useSampleQuery({ variables: { id: 2 } });
+  const { user } = useUser();
   return (
     <>
       {!loading && (
@@ -13,6 +15,16 @@ const Home = () => {
         </>
       )}
       <h1>Hello World</h1>
+      <button>
+        <a href="/api/auth/login" data-testid="login">
+          Login
+        </a>
+      </button>
+      <button>
+        <a href="/api/auth/logout" data-testid="logout">
+          Logout
+        </a>
+      </button>
     </>
   );
 };
