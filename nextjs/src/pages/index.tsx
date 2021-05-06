@@ -6,7 +6,6 @@ const Home = () => {
   const { user } = useUser();
   const sub = user?.sub ? user.sub : "a";
   const { data, loading } = useSampleQuery({ variables: { sub: sub } });
-  console.log(user);
   return (
     <>
       {!loading && (
