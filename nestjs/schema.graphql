@@ -3,11 +3,12 @@
 # ------------------------------------------------------
 
 type SampleModel {
+  sub: String!
   id: Int!
   name: String!
   freeInput: String!
 }
 
 type Query {
-  sample(id: Int!): SampleModel
+  sample(sub: String!): SampleModel
 }
