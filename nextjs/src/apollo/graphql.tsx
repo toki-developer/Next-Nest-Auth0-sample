@@ -21,18 +21,19 @@ export type Query = {
 
 
 export type QuerySampleArgs = {
-  id: Scalars['Int'];
+  sub: Scalars['String'];
 };
 
 export type SampleModel = {
   __typename?: 'SampleModel';
+  sub: Scalars['String'];
   id: Scalars['Int'];
   name: Scalars['String'];
   freeInput: Scalars['String'];
 };
 
 export type SampleQueryVariables = Exact<{
-  id: Scalars['Int'];
+  sub: Scalars['String'];
 }>;
 
 
@@ -46,8 +47,8 @@ export type SampleQuery = (
 
 
 export const SampleDocument = gql`
-    query sample($id: Int!) {
-  sample(id: $id) {
+    query sample($sub: String!) {
+  sample(sub: $sub) {
     id
     name
     freeInput
@@ -67,7 +68,7 @@ export const SampleDocument = gql`
  * @example
  * const { data, loading, error } = useSampleQuery({
  *   variables: {
- *      id: // value for 'id'
+ *      sub: // value for 'sub'
  *   },
  * });
  */

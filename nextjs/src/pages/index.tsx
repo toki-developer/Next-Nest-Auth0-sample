@@ -3,8 +3,9 @@ import gql from "graphql-tag";
 import { useSampleQuery } from "src/apollo/graphql";
 
 const Home = () => {
-  const { data, loading } = useSampleQuery({ variables: { id: 2 } });
   const { user } = useUser();
+  const sub = user?.sub ? user.sub : "a";
+  const { data, loading } = useSampleQuery({ variables: { sub: sub } });
   console.log(user);
   return (
     <>
@@ -15,16 +16,20 @@ const Home = () => {
           <p>{data?.sample?.freeInput}</p>
         </>
       )}
-      <button>
-        <a href="/api/auth/login" data-testid="login">
-          Login
-        </a>
-      </button>
-      <button>
-        <a href="/api/auth/logout" data-testid="logout">
-          Logout
-        </a>
-      </button>
+      <p>{user?.name}</p>
+      {!user ? (
+        <button>
+          <a href="/api/auth/login" data-testid="login">
+            Login
+          </a>
+        </button>
+      ) : (
+        <button>
+          <a href="/api/auth/logout" data-testid="logout">
+            Logout
+          </a>
+        </button>
+      )}
     </>
   );
 };
@@ -32,8 +37,8 @@ const Home = () => {
 export default Home;
 
 gql`
-  query sample($id: Int!) {
-    sample(id: $id) {
+  query sample($sub: String!) {
+    sample(sub: $sub) {
       id
       name
       freeInput
