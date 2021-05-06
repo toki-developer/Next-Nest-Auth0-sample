@@ -1,4 +1,4 @@
-# next-nest-Google-Auth-sample
+# next-nest-Auth0-sample
 
 ### 使用技術
 
