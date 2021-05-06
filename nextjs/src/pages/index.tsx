@@ -5,6 +5,7 @@ import { useSampleQuery } from "src/apollo/graphql";
 const Home = () => {
   const { data, loading } = useSampleQuery({ variables: { id: 2 } });
   const { user } = useUser();
+  console.log(user);
   return (
     <>
       {!loading && (
@@ -14,7 +15,6 @@ const Home = () => {
           <p>{data?.sample?.freeInput}</p>
         </>
       )}
-      <h1>Hello World</h1>
       <button>
         <a href="/api/auth/login" data-testid="login">
           Login
