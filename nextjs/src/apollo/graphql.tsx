@@ -27,7 +27,7 @@ export type QuerySampleArgs = {
 export type SampleModel = {
   __typename?: 'SampleModel';
   sub: Scalars['String'];
-  id: Scalars['Int'];
+  id: Scalars['String'];
   name: Scalars['String'];
   freeInput: Scalars['String'];
 };

@@ -4,6 +4,7 @@ import { useSampleQuery } from "src/apollo/graphql";
 
 const Home = () => {
   const { user } = useUser();
+  console.log(user);
   const sub = user?.sub ? user.sub : "a";
   const { data, loading } = useSampleQuery({ variables: { sub: sub } });
   return (
@@ -28,6 +29,16 @@ const Home = () => {
             Logout
           </a>
         </button>
+      )}
+      {user && (
+        <>
+          <div>
+            <p>{user.name}</p>
+            <p>{user.email}</p>
+            <p>{user.sub}</p>
+            <p>{user.picture}</p>
+          </div>
+        </>
       )}
     </>
   );
