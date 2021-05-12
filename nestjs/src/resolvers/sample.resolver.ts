@@ -14,16 +14,16 @@ export class SampleResolver {
     if (sub == 'google-oauth2|103738236885130765341') {
       SampleModel = {
         sub: sub,
-        id: 1,
+        id: '1',
         name: '瞬生',
         freeInput: '瞬生で認証できています',
       };
     } else {
       SampleModel = {
         sub: sub,
-        id: 2,
-        name: 'テストユーザ',
-        freeInput: '認証違う人です',
+        id: sub,
+        name: '',
+        freeInput: '',
       };
     }
     return SampleModel;

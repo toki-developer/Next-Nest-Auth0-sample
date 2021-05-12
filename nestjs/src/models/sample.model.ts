@@ -5,8 +5,8 @@ export class SampleModel {
   @Field()
   sub: string;
 
-  @Field(() => Int)
-  id: number;
+  @Field()
+  id: string;
 
   @Field()
   name: string;
