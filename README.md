@@ -18,7 +18,7 @@
 - GraphQL
 - Apollo Server
 
-###
+### 別の方法
 
 api/auth/[auth0].ts のやり方 ↓
 
