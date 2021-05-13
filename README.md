@@ -18,8 +18,8 @@
 - GraphQL
 - Apollo Server
 
-### 別の方法
+### 別の書き方
 
-api/auth/[auth0].ts のやり方 ↓
+シンプルなバージョン ↓
 
 https://github.com/tokio-k/Next-Nest-Auth0-sample/tree/auth0ts_Version
