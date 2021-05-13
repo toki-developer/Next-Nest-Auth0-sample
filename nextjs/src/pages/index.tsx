@@ -6,9 +6,6 @@ const Home = () => {
   // const sub = user?.sub ? user.sub : "a";
   // const { data, loading } = useSampleQuery({ variables: { sub: sub } });
   const user = useContext(UserContext);
-  if (user.user.id != "" && user.user.name == "") {
-    console.log("ここを通っている");
-  }
   return (
     <>
       <button>

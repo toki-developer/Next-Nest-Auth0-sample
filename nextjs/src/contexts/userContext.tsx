@@ -1,7 +1,6 @@
 import { UserProvider, useUser } from "@auth0/nextjs-auth0";
 import gql from "graphql-tag";
 import type { ReactNode, VFC } from "react";
-import { useEffect, useState } from "react";
 import { createContext } from "react";
 import { useSampleQuery } from "src/apollo/graphql";
 
